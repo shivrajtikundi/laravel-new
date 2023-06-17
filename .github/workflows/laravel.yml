@@ -46,4 +46,4 @@ jobs:
           cd /var/www/html/
           sudo rm -rf myapp
           git checkout -f 
-          git pull
+          git pull master
