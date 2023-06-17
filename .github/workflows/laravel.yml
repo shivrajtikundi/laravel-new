@@ -43,4 +43,4 @@ jobs:
         key: ${{ secrets.EC2_PRIVATE_KEY }}
         username: ubuntu
         script: |
-          'cd /var/www/html/ &&  ./server_deploy.sh'
+          'cd /var/www/html/ &&  sh ./server_deploy.sh'
