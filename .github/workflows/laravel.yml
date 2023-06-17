@@ -43,7 +43,7 @@ jobs:
         key: ${{ secrets.EC2_PRIVATE_KEY }}
         username: ubuntu
         script: |
-          cd /var/www/html
+          cd /var/www/html/
           sudo rm -rf myapp
           git checkout -f 
           git pull
