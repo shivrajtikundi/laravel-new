@@ -44,6 +44,6 @@ jobs:
         username: ubuntu
         script: |
           cd /var/www/html/
-          sudo rm -rf myapp
+          # sudo rm -rf myapp
           git checkout -f 
           git pull
