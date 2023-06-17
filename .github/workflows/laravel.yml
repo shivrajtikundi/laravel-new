@@ -33,17 +33,18 @@ jobs:
       run: |
         mkdir -p database
         touch database/database.sqlite
-#    - name: Execute Tests (Unit and Feature Tests) via PHPUnit
-#      env:
-#        DB_CONNECTION: sqlite
-#        DB_DATABASE: database/database.sqlite
-#      run: vendor/bin/phpunit --migrate-configuration
+        ls
+    - name: Execute Tests (Unit and Feature Tests) via PHPUnit
+      env:
+        DB_CONNECTION: sqlite
+        DB_DATABASE: database/database.sqlite
+      run: vendor/bin/phpunit --migrate-configuration
 
-#    - name: Push Code to EC2 Instance
-#      uses: appleboy/scp-action@master
-#      with:
-#        host: 3.6.179.69
-#        username: ubuntu
-#        key: ${{ secrets.EC2_PRIVATE_KEY }}
-#        source: ./
-#        target: /home/ubuntu/laravel
+    - name: Push Code to EC2 Instance
+      uses: appleboy/scp-action@master
+      with:
+        host: 65.0.179.142
+        username: ubuntu
+        key: ${{ secrets.EC2_PRIVATE_KEY }}
+        source: ./
+        target: /var/www/html/
