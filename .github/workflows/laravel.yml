@@ -60,6 +60,6 @@ jobs:
         host: 65.0.179.142
         username: ubuntu
         key: ${{ secrets.EC2_PRIVATE_KEY }}
-        source: ./
+        source: ./*
         target: /var/www/myapp/
         command_opts: '-r -i'
