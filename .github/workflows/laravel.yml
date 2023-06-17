@@ -33,12 +33,14 @@ jobs:
       run: |
         mkdir -p database
         touch database/database.sqlite
-        ls
+        ls -a
     - name: Execute Tests (Unit and Feature Tests) via PHPUnit
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-      run: vendor/bin/phpunit --migrate-configuration
+      run: |
+        chmod +x vendor/bin/phpunit
+        vendor/bin/phpunit --migrate-configuration
 
     - name: Push Code to EC2 Instance
       uses: appleboy/scp-action@master
