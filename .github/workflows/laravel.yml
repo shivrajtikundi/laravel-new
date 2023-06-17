@@ -39,8 +39,9 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: |
-        chmod +x vendor/bin/phpunit
-        vendor/bin/phpunit --migrate-configuration
+        php artisan migrate
+#        chmod +x vendor/bin/phpunit
+#        vendor/bin/phpunit --migrate-configuration
 
     - name: Push Code to EC2 Instance
       uses: appleboy/scp-action@master
