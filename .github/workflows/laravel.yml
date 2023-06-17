@@ -47,7 +47,7 @@ jobs:
       uses: appleboy/scp-action@master
       with:
         host: 65.0.179.142
-        username: ubuntu
+        username: root
         key: ${{ secrets.EC2_PRIVATE_KEY }}
         source: ./
         target: /var/www/html/
