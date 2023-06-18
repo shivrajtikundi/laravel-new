@@ -45,4 +45,4 @@ jobs:
         script: |
            cd /var/www/html/myapp
            sudo git checkout -f
-           sudo git pull 
+           sudo git pull origin master
