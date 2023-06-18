@@ -43,6 +43,10 @@ jobs:
         key: ${{ secrets.EC2_PRIVATE_KEY }}
         username: ubuntu
         script: |
-           cd /var/www/html/myapp
-           sudo git checkout -f
-           sudo git pull origin master
+            cd /var/www/html/myapp
+            sudo git pull origin master
+            sudo composer install --no-dev --optimize-autoloader
+            sudo php artisan migrate --force
+            sudo php artisan config:cache
+            sudo php artisan route:cache
+            sudo php artisan view:cache
