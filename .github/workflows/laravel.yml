@@ -44,6 +44,6 @@ jobs:
         username: ubuntu
         script: |
            cd /var/www/html/myapp
-           git checkout master
-           git fetch --all && git reset --hard orgin/master 
-           git pull origin master 
+           sudo git checkout master
+           sudo git fetch --all && sudo git reset --hard orgin/master 
+           sudo git pull origin master 
