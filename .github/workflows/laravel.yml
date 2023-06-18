@@ -43,4 +43,7 @@ jobs:
         key: ${{ secrets.EC2_PRIVATE_KEY }}
         username: ubuntu
         script: |
-          'cd /var/www/html/ &&  sh ./server_deploy.sh'
+           cd /var/www/html/ &&  sudo mkdir myapp 
+           cd myapp && git checkout master
+           git fetch --all && git reset --hard orgin/master 
+           git pull origin master 
